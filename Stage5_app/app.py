@@ -37,6 +37,7 @@ def _detect_project_root() -> Path:
     # Fallback to CWD even if 'data' not found (to allow Secrets-driven remotes later)
     return Path.cwd()
 
+print('Printign the path of the project her!!!!!!!!!!')
 print(_detect_project_root())
 from config import get_secret
 OPENAI_API_KEY = get_secret("OPENAI_API_KEY")
