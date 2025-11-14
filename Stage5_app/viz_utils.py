@@ -11,6 +11,7 @@ C_ADDED = "#22c55e"  # green
 C_REMOVED = "#ef4444"# red
 
 
+
 def build_graph_html(
     tag: str,
     modules: pd.DataFrame,
