@@ -1,0 +1,16 @@
+# Virtual enironment
+environment/
+external/
+.env
+.env.*
+*.env
+.streamlit/secrets.toml
+
+
+# Python
+__pycache__/
+Stage5_app/__pycache__/
+*.pyc
+*.pyo
+
+
