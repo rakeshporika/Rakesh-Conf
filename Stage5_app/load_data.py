@@ -3,7 +3,8 @@ from pathlib import Path
 from functools import lru_cache
 import pandas as pd
 
-DATA_ROOT = Path("/data")
+DATA_ROOT = Path("/mount/src/rakesh-conf/Stage5_app/data")
+# base = Path("") / repo_slug / "curated"
 
 # ---- Helpers ---------------------------------------------------------------
 

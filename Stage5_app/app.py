@@ -47,8 +47,8 @@ from viz_utils import build_graph_html
 
 st.set_page_config(page_title="ArchViz", layout="wide")
 
-st.write('Printign the path of the project her!!!!!!!!!!')
-st.write(_detect_project_root())
+# st.write('Printign the path of the project her!!!!!!!!!!')
+# st.write(_detect_project_root())
 
 # --- EXPLANATION & STATS HELPERS ---------------------------------------------
 def legend_block():
@@ -168,7 +168,7 @@ def make_pdf_bytes(title: str, sections: list[tuple[str, str]]) -> bytes:
 # ---- Sidebar ----------------------------------------------------------------
 st.title("ArchViz: LLM-assisted Architecture Evolution & Visualization")
 repo_slug = st.sidebar.text_input("Repo slug", value="fastapi")
-base = Path("data") / repo_slug / "curated"
+base = Path("/mount/src/rakesh-conf/Stage5_app/data") / repo_slug / "curated"
 if not base.exists():
     st.error(f"Data not found at {base}. Please run Stages 2–4.")
     st.stop()
