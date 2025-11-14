@@ -5,8 +5,8 @@ external/
 .env.*
 *.env
 .streamlit/secrets.toml
-
-
+project.zip
+requirements.txt
 # Python
 __pycache__/
 Stage5_app/__pycache__/

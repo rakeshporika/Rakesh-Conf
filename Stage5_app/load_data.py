@@ -3,7 +3,7 @@ from pathlib import Path
 from functools import lru_cache
 import pandas as pd
 
-DATA_ROOT = Path("../data")
+DATA_ROOT = Path("/data")
 
 # ---- Helpers ---------------------------------------------------------------
 
