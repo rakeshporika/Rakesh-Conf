@@ -13,13 +13,31 @@ import os, io, json
 import plotly.express as px
 import plotly.graph_objects as go
 
-
 from load_data import (
     load_versions, load_modules, load_edges, load_metrics,
     load_drift, load_changes_edges, load_changes_modules, load_changes_metrics,
     list_tags, slice_by_tag
 )
 
+
+def _detect_project_root() -> Path:
+    """
+    Try common locations relative to this file and CWD.
+    Returns a path that contains a 'data' folder.
+    """
+    here = Path(__file__).resolve()
+    candidates = [
+        here.parent.parent,   # project-root/   (common on Streamlit Cloud)
+        here.parent,          # project-root/stage5_app/
+        Path.cwd(),           # wherever Streamlit launched
+    ]
+    for c in candidates:
+        if (c / "data").exists():
+            return c
+    # Fallback to CWD even if 'data' not found (to allow Secrets-driven remotes later)
+    return Path.cwd()
+
+print(_detect_project_root())
 from config import get_secret
 OPENAI_API_KEY = get_secret("OPENAI_API_KEY")
 OPENAI_MODEL = get_secret("OPENAI_MODEL")
