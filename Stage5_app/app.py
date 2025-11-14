@@ -37,8 +37,7 @@ def _detect_project_root() -> Path:
     # Fallback to CWD even if 'data' not found (to allow Secrets-driven remotes later)
     return Path.cwd()
 
-print('Printign the path of the project her!!!!!!!!!!')
-print(_detect_project_root())
+
 from config import get_secret
 OPENAI_API_KEY = get_secret("OPENAI_API_KEY")
 OPENAI_MODEL = get_secret("OPENAI_MODEL")
@@ -47,6 +46,9 @@ client = OpenAI(api_key=OPENAI_API_KEY) if OPENAI_API_KEY else None
 from viz_utils import build_graph_html
 
 st.set_page_config(page_title="ArchViz", layout="wide")
+
+st.write('Printign the path of the project her!!!!!!!!!!')
+st.write(_detect_project_root())
 
 # --- EXPLANATION & STATS HELPERS ---------------------------------------------
 def legend_block():
