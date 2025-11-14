@@ -147,7 +147,7 @@ def make_pdf_bytes(title: str, sections: list[tuple[str, str]]) -> bytes:
 # ---- Sidebar ----------------------------------------------------------------
 st.title("ArchViz: LLM-assisted Architecture Evolution & Visualization")
 repo_slug = st.sidebar.text_input("Repo slug", value="fastapi")
-base = Path("../data") / repo_slug / "curated"
+base = Path("data") / repo_slug / "curated"
 if not base.exists():
     st.error(f"Data not found at {base}. Please run Stages 2–4.")
     st.stop()
