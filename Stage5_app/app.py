@@ -37,10 +37,15 @@ def _detect_project_root() -> Path:
     # Fallback to CWD even if 'data' not found (to allow Secrets-driven remotes later)
     return Path.cwd()
 
-
+st.write('getting keys!!!!!!!!!!')
 from config import get_secret
 OPENAI_API_KEY = get_secret("OPENAI_API_KEY")
 OPENAI_MODEL = get_secret("OPENAI_MODEL")
+
+st.write('Printign the keys from streamlit secrets!!!!!!!!!!')
+st.write(OPENAI_API_KEY)
+st.write(OPENAI_MODEL)
+ 
 client = OpenAI(api_key=OPENAI_API_KEY) if OPENAI_API_KEY else None
 
 from viz_utils import build_graph_html
