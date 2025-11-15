@@ -46,7 +46,11 @@ st.write('Printign the keys from streamlit secrets!!!!!!!!!!')
 st.write(OPENAI_API_KEY)
 st.write(OPENAI_MODEL)
  
-client = OpenAI(api_key=OPENAI_API_KEY) if OPENAI_API_KEY else None
+ # Updated line 44 in app.py
+api_key_str = str(OPENAI_API_KEY) if OPENAI_API_KEY else None
+client = OpenAI(api_key=api_key_str) if api_key_str else None
+
+# client = OpenAI(api_key=OPENAI_API_KEY) if OPENAI_API_KEY else None
 
 st.write('hello jjjjj !!!!!!!!!!')
 
