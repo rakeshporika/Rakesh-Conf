@@ -48,6 +48,8 @@ st.write(OPENAI_MODEL)
  
 client = OpenAI(api_key=OPENAI_API_KEY) if OPENAI_API_KEY else None
 
+st.write('hello jjjjj !!!!!!!!!!')
+
 from viz_utils import build_graph_html
 
 st.set_page_config(page_title="ArchViz", layout="wide")
