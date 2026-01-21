@@ -688,4 +688,4 @@ with TAB4:
 
 
 # ---- Footer -----------------------------------------------------------------
-st.caption("Developed by IIT Gandhinagar - ArchViz • Data from Open-Source • PyVis + Plotly • Streamlit")
+st.caption("Developed by PR, IIT Gandhinagar - ArchViz • Data from Open-Source • PyVis + Plotly • Streamlit")
